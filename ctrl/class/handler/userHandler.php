@@ -1,6 +1,11 @@
 <?php
-
 	namespace handler;
+	
+	/*
+	* Class userHandler
+	* used to track user, to authenticate it and start session
+	* i used pat_account as session main name
+	*/
 	
 	class userHandler{
 		public $id;
@@ -18,7 +23,6 @@
 			}
 		}
 		
-		//initialise object userHandler using session pat_account
 		protected function _initUser($user){
 			if(is_numeric($user->id)){
 				$this->id = $user->id;

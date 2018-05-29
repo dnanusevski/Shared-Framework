@@ -1,0 +1,15 @@
+Options -Indexes
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+
+RewriteRule ^([a-zA-Z0-9-]+)/?$ index.php?a=$1
+RewriteRule ^([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/?$ index.php?a=$1&b=$2
+RewriteRule ^([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/?$ index.php?a=$1&b=$2&c=$3
+RewriteRule ^([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/?$ index.php?a=$1&b=$2&c=$3&d=$4
+RewriteRule ^([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/?$ index.php?a=$1&b=$2&c=$3&d=$4&e=$5
+RewriteRule ^([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/?$ index.php?a=$1&b=$2&c=$3&d=$4&e=$5&f=$6
+RewriteRule ^([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/?$ index.php?a=$1&b=$2&c=$3&d=$4&e=$5&f=$6&g=$7
+RewriteRule ^([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/?$ index.php?a=$1&b=$2&c=$3&d=$4&e=$5&f=$6&g=$7&h=$8
+</IfModule>
+

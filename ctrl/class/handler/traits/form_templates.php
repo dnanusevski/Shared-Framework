@@ -1,5 +1,10 @@
 <?php
 namespace traits;
+/*
+* some cusutm html code for fast generation of form holders
+* best seen in action :D
+*/
+
 trait from_templates{
 
 	function generate_form_holder_green($title,$formClass,$asked_form,$aditional_class='',&$data = ''){

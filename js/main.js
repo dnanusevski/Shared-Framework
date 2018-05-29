@@ -1,0 +1,1 @@
+//alert("ALERT FROM MAIN JS FROM JS FOLDER");

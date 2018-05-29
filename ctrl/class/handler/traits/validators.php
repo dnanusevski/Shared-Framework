@@ -1,10 +1,8 @@
 <?php
 namespace traits;
 trait validators{
-	 
 	
 	function check_numeric($post_value,$required = false) { 
-		//echo "<br /> CHECKING NUMERIC VALUE: ".$post_value ;
 		if($required){
 			if($post_value == NULL){
 				return false;
@@ -21,7 +19,6 @@ trait validators{
 	}
 	
 	function check_string($post_value, $required = false, $length = '') { 
-		//echo "<br /> CHECKING text or textarea STRING VALUE: ".$post_value ;
 
 		if($required){
 			if($post_value == NULL) {
@@ -37,7 +34,6 @@ trait validators{
 	}
 	
 	function validate_date($post_value, $required = false, $length = '', $format = ''){
-		//echo "<br /> CHECKING DATE VALUE: ".$post_value ;
 		if($length == '') return false;
 		if($format == '') return false;
 		
@@ -57,7 +53,6 @@ trait validators{
 	}
 	
 	function validate_email($post_value, $required = false, $length = ''){
-		//echo "<br /> CHECKING EMAIL VALUE: ".$post_value ;
 
 		if($required){
 			if($post_value == NULL){
@@ -76,7 +71,6 @@ trait validators{
 	
 	
 	function validate_radio($post_value, $required, $allowed_values){
-		//echo "<br /> CHECKING RADIO: ".$post_value ;
 		if($required){
 			if($post_value == NULL) 
 				return false;
@@ -91,7 +85,6 @@ trait validators{
 	}
 	
 	function validate_checkbox($allowed_checkbox_values, $required){
-		//echo "<br /> CHECKING CHECKBOX: " ;
 		if($required){
 			$one_set = false;
 			foreach($allowed_checkbox_values 
@@ -121,7 +114,6 @@ trait validators{
 	}
 	
 	function validate_checkbox_array($sent_array,$allowed_checkbox_values, $required){
-		//echo "<br /> CHECKING CHECKBOX ARRAY: " ;
 		if($required){
 			if($sent_array == NULL)
 				return false;
@@ -140,7 +132,6 @@ trait validators{
 	
 	
 	function validate_file($file, $length, $allowed, $system_allowed){
-		//echo "<br />VALIDATING FILE" ;
 
 		foreach($allowed as $cur_type){
 			if(!in_array($cur_type, $system_allowed)) {
@@ -194,7 +185,7 @@ trait validators{
 		);
 		return $photo_types;
 	}
-	
+	//left for later
 	function process_name_resolve(){
 		
 	}

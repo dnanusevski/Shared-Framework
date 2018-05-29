@@ -1,0 +1,10 @@
+<h2>FORM PAGE MAIN SECTION</h2>
+
+<?php
+	include(PAGE_URI.'/default_forms.php');
+
+
+	$formHandlerClient = new handler\formHandlerClient($form_array);
+	$formHandlerClient->generate_form_by_template('test-from-ajax');
+
+?> 

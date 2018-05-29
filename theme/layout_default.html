@@ -1,0 +1,30 @@
+	
+	<div id="middle_section_wrapper">
+		<header id = "layout_default_header" class = "layout_default_header" >
+			<?php $contentHandler->insert_header(); ?>
+		</header>
+		<aside id = "layout_default_aside_first" class = "layout_default_aside"><br />
+			<?php if($view = $contentHandler->get_view_adress('aside_first'))
+					include($view);
+			?>
+		</aside>
+		
+		<section id = "layout_default_main_section" class = "layout_default_main_section"><br />
+			<?php 
+			require_once(ROOT_URI.'/theme/report.php'); 
+			if($view = $contentHandler->get_view_adress('main_section'))
+					include($view);
+			?>
+		</section>
+		
+		<aside id = "layout_default_aside_second" class = "layout_default_aside"><br />
+			<?php if($view = $contentHandler->get_view_adress('aside_second'))
+					include($view);
+			?>
+		</aside>
+		
+	</div>	
+	
+	<footer id = "layout_default_footer" class = "layout_default_footer">
+		<?php $contentHandler->insert_footer(); ?>
+	</footer>

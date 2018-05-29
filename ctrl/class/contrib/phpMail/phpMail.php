@@ -62,7 +62,7 @@ class phpMail{
 				if($options['from_mail'] != '' AND $options['from_name'] != '')
 					$this->mail->setFrom($options['from_mail'], $options['from_name']);
 			}
-			else $this->mail->setFrom('noreaply@sf.com', 'Sf noreplay');
+			else $this->mail->setFrom('noreaply@dentarc.com', 'Dentarc support');
 			
 			
 			if(isset($options['name']) AND $options['name'] != '')

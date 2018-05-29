@@ -4,3 +4,5 @@ Secure session is still missing
 
 
 Change link to keys in define.php / mine is set to win folder
+
+change secret key inside define.php

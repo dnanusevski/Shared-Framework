@@ -1,0 +1,17 @@
+	
+	<div id="middle_section_wrapper">
+		<header id = "layout_default_header" class = "layout_default_header" >
+			<?php $contentHandler->insert_header(); ?>
+		</header>
+		<section id = "layout_default_main_section" class = "layout_default_main_section"><br />
+			<?php 
+			require_once(ROOT_URI.'/theme/report.php'); 
+			if($view = $contentHandler->get_view_adress('main_section'))
+					include($view);
+			?>
+		</section>	
+	</div>	
+	
+	<footer id = "layout_default_footer" class = "layout_default_footer">
+		<?php $contentHandler->insert_footer(); ?>
+	</footer>

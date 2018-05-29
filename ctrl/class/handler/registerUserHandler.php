@@ -1,10 +1,9 @@
 <?php
 namespace handler;
 
-
 /*
-* Intended to insert a nwe user in database
-* it uses email token to insert an ew one
+* class registerUserHandler
+* use it to create new input in database, add new user
 */
 class registerUserHandler{
 	private $session_token;
@@ -29,40 +28,39 @@ class registerUserHandler{
 	}
 	
 	function validate_register_token(){
-
-		//operation needed to work
+		
+		
 		if($this->operation === null || $this->url_token === null){
 			//echo "ERROR 1";
 			return false;
 		}
-		//operation needs to be register or reset
+		
 		if($this->operation != 'register' AND $this->operation != 'reset'){
 			//echo "ERROR 2";
 			return false;
 		}
-		//we need to have a token already in session
+		
 		if(!$this->retrieved_token || $this->retrieved_token == ''){
 			//echo "ERROR 3";
 			return false;
 		}
-		//required from url
 		if(!$this->url_token || $this->url_token == ''){
-			echo "ERROR 4";
-			return false;
-		}
-		//both tokens need to match
-		if($this->retrieved_token != $this->url_token){
-			echo "ERROR 5";
+			//echo "ERROR 4";
 			return false;
 		}
 		
-		//some time diference between registration needs to be there
+		if($this->retrieved_token != $this->url_token){
+			//echo "ERROR 5";
+			return false;
+		}
+		
 		$time_dif = time() - $this->registration_start;
 		
 		if($time_dif > 33600){
-			echo "ERROR 6";
+			//echo "ERROR 6";
 			return false;
 		}
+
 		return true;
 	}
 	
@@ -70,10 +68,14 @@ class registerUserHandler{
 		if($this->operation == 'register' ){
 			$dbRegisterHandler = new \handler\db\dbRegisterHandler();
 			return $dbRegisterHandler->registerUser(); //returns user id or false
+			
 		}
-		//for later dono
+		//for later
 		else if($this->operation == 'reset' ){
 			
 		}
+	
 	}
+	
+	
 }

@@ -1,5 +1,7 @@
 <?php
 
+	//gget or get a get variable at specific location
+	//all get vatriables are reprezented as a b c d and so forth
 	function gget($num){
 		$gget = array(1=>"a",2=>"b",3=>"c",4=>"d",5=>"e",6=>"f",7=>"g",8=>"h");
 		if(isset($_GET[$gget[$num]]))
@@ -16,6 +18,8 @@
 		return $url;
 	}
 	
+	// generate hyperlink and check if it is found in URL
+	// if yes then give it a class active class
 	function a($link,$text,$active_class = "a_reg_active"){
 		
 		$class = '';
@@ -26,6 +30,7 @@
 	}
 	
 	//add value to session report so that we can display if necessary
+	//second parameter defines if message is error or success
 	function add_report($report,$error = 'error'){
 		if(!isset($_SESSION['report']))
 			$_SESSION['report'] = [];
@@ -37,6 +42,7 @@
 		}
 	}
 
+	//just html code to generate report
 	function read_report(){
 		if(!isset($_SESSION['report']))
 			return false;
@@ -54,6 +60,7 @@
 		}
 	}
 	
+	//get if some report is set
 	function cont_report(){
 		$count = 0;
 		
@@ -66,6 +73,7 @@
 		return $count;
 	}
 	
+	//get report error or success
 	function get_report($type = "error"){
 		if($type == 'error'){
 			if(isset($_SESSION['report']['error']))
@@ -78,7 +86,7 @@
 		return false;
 	}
 	
-	
+	//remove data from report
 	function clear_report(){
 		$_SESSION['report'] = [];
 		unset($_SESSION['report']);
@@ -158,7 +166,7 @@
 		return $_SESSION[$name];
 	}
 	
-
+	//generate a random string with default 64 character length
 	function rand_str($length = 64){
 		$bytes = openssl_random_pseudo_bytes($length, $cstrong);
 		$hex = bin2hex($bytes);
@@ -197,11 +205,13 @@
 		}
 	}
 	
+	//hash string using blowfish
 	function blowfish($pass){
 		$pass = password_hash($pass, PASSWORD_BCRYPT);
 		return $pass;
 	}
 	
+	//validate hashed password 
 	function check_pass($str,$hash){
 		if(password_verify($str,$hash)){
 			return true;
