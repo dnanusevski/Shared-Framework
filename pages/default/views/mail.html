@@ -1,0 +1,18 @@
+<?php
+$options['from_mail'] = "info@sf.com";
+$options['from_name'] = "Shared framework info";
+
+$options['replay_to'] = "support@sf.com";
+$options['replay_name'] = "Shared framework support";
+
+
+$php_mail = new \contrib\phpMail\phpMail();
+
+if($php_mail->send_mail('sub new','body new','dnanusevski@gmail.com',$options)){
+	echo "<h1> MAIL SENT </h1>";
+}else{
+	echo "<h1> MAIL NOT SENT </h1>";
+}
+
+
+?>
